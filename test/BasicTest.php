@@ -1,5 +1,9 @@
 <?php
 
+namespace Test;
+
+use BoringLib;
+
 require_once('UnitTestCase.php');
 
 /**
@@ -19,6 +23,16 @@ class BasicTest extends \UnitTestCase
             "works",
             "works1",
             "This will fail"
+        );
+    }
+
+    public function testBoringLibrary() {
+        $lib = BoringLib("hi");
+
+        $this->assertEquals(
+            "hi",
+            $lib->getValue(),
+            "passes"
         );
     }
 }
